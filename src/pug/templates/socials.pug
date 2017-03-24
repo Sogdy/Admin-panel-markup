@@ -1,0 +1,22 @@
+.socials
+    -
+        var socialsObj = [
+        {
+        name: 'facebook',
+        link: 'https://www.facebook.com/'
+        },
+        {
+        name: 'twitter',
+        link: 'https://twitter.com'
+        },
+        {
+        name: 'googleplus',
+        link: 'https://plus.google.com/'
+        }
+
+        ]
+    ul.socials__list
+        each social in socialsObj
+            li.socials__item
+                a(class=`socials__link socials__link_${social.name}` href=`${social.link}`)
+                    i(class=`icon ion-social-${social.name}`)

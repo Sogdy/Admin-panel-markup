@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Swivl Cloud</title>
+    <meta name="description" content="Lifting achievement by expanding the focus of observations to students.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS-->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Site Styles-->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="body__wrapper">
+      <header>
+        <!-- Header block begin-->
+        <div class="header__wrap header container">
+          <h1 class="header__logo"><img src="images/logo-header.svg" title="Swivl's logo" alt="Swivl's logo"></h1>
+          <!-- Navigation block begin-->
+          <div class="header__nav">
+            <nav class="main-menu">
+              <ul class="main-menu__list">
+                <li class="main-menu__item"><a class="main-menu__link" href="#">My Feed</a></li>
+                <li class="main-menu__item"><a class="main-menu__link" href="#">Library</a></li>
+                <li class="main-menu__item"><a class="main-menu__link" href="#">Groups</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Navigation block end-->
+          <div class="header__min-profile"><a class="header__min-profile_name" href="#">allej7</a></div>
+        </div>
+        <!-- Header block end-->
+      </header>
+      <!-- Main content part begin-->
+      <main class="content">
+        <h2>About Swivl</h2>
+        <div class="meta-info">
+          <div class="meta-info__users">
+            <p>15 users</p>
+          </div>
+          <div class="meta-info__projects">
+            <p>4 projects</p>
+          </div>
+        </div>
+        <!-- About Swivl section begin-->
+        <section class="group container section">
+          <h3 class="section-title">About Swivl</h3>
+          <button class="button" id="group_edit">Edit</button>
+          <div class="meta-info">
+            <div class="meta-info__date">
+              <time datetime="2017-03-22">Created 1 day ago</time>
+            </div>
+          </div>
+          <p>This group is created for sharing introductory tutorials about Swivl</p>
+          <label for="members_approval" id="label">New members require approval:</label>
+          <input type="checkbox" name="members_approval" id="members_approval" checked>
+        </section>
+        <!-- About Swivl section end-->
+        <!-- Invite members section begin-->
+        <section class="invite-members container section">
+          <h3 class="section-title">Invite group members</h3>
+          <div class="code-field">
+            <p>Email join code to existing Swivl Service users: </p>
+            <input class="code-field__text" type="text" name="code-field_text" value="BDd4DV">
+            <button class="button code-field__reload"></button>
+          </div>
+          <p>Or have us send the invitations, enter email separated by one of the symbols  <span class="spec-symbols">  ; , spacebar </span>or start with a new line</p>
+          <form id="invite-members">
+            <input class="email__invitation" type="text" name="email_invitation" id="email_invitation" onfocus="if(this.value=='example@gmail.com') { this.value=''; }" onblur="if(this.value=='') { this.value='example@gmail.com'; }" value="example@gmail.com"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            <button class="button" form="invite-members" type="button" id="invite-members__button">Send</button>
+          </form>
+        </section>
+        <!-- Invite members section end-->
+        <!-- Members section begin-->
+        <section class="members container section">
+          <h3 class="section-title">Members</h3>
+          <div class="section-table" id="members">
+            <div class="section-table__row section-table__headings">
+              <div class="section-table__cell members__name">
+                <p>User Name</p>
+              </div>
+              <div class="section-table__cell members__email">
+                <p>Email</p>
+              </div>
+              <div class="section-table__cell members__stats">
+                <p>Video Stats</p>
+              </div>
+              <div class="section-table__cell members__status">
+                <p>Status</p>
+              </div>
+              <div class="section-table__cell remove"></div>
+            </div>
+            <div class="section-table__row">
+              <div class="section-table__cell members__name">
+                <p>Jonathan Romero</p>
+              </div>
+              <div class="section-table__cell members__email">
+                <p>jonathan.romero19@example.com</p>
+              </div>
+              <div class="section-table__cell members__stats"><a href="#">See Details</a></div>
+              <div class="section-table__cell members__status">
+                <button class="members__approve">Approve</button>
+              </div>
+              <div class="section-table__cell remove">
+                <button class="remove__button"> </button>
+              </div>
+            </div>
+            <div class="section-table__row">
+              <div class="section-table__cell members__name">
+                <p>Joanne Hall</p>
+              </div>
+              <div class="section-table__cell members__email">
+                <p>joanne.hall48@example.com</p>
+              </div>
+              <div class="section-table__cell members__stats"><a href="#">See Details</a></div>
+              <div class="section-table__cell members__status">
+                <button class="members__approve">Approve</button>
+              </div>
+              <div class="section-table__cell remove">
+                <button class="remove__button"> </button>
+              </div>
+            </div>
+            <div class="section-table__row">
+              <div class="section-table__cell members__name">
+                <p>Brad Freeman</p>
+              </div>
+              <div class="section-table__cell members__email">
+                <p>brad.freeman95@example.com</p>
+              </div>
+              <div class="section-table__cell members__stats"><a href="#">See Details</a></div>
+              <div class="section-table__cell members__status">
+                <button class="members__approve approved" disabled>Approved</button>
+              </div>
+              <div class="section-table__cell remove">
+                <button class="remove__button"> </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Members section end-->
+        <!-- Projects section begin-->
+        <section class="projects container section">
+          <h3 class="section-title">Projects</h3>
+          <button class="button" id="projects_add-video">Add Video</button>
+          <div class="section-table" id="projects">
+            <div class="section-table__row section-table__headings">
+              <div class="section-table__cell projects__preview_slides">
+                <p>Preview</p>
+              </div>
+              <div class="section-table__cell projects__preview_video"></div>
+              <div class="section-table__cell projects__info">
+                <p>Project Info</p>
+              </div>
+              <div class="section-table__cell remove"></div>
+            </div>
+            <div class="section-table__row">
+              <div class="section-table__cell projects__preview_slides"><a href="#"><img src="images/no-slides.jpg" alt="Photo: Air Pollution slide"></a></div>
+              <div class="section-table__cell projects__preview_video"><a href="#">
+                  <div class="projects__img-info"><i class="icon ion-ios-videocam"></i>
+                    <p>00:34</p>
+                  </div><img src="images/air-pollution-video.jpg" alt="Video: Air Pollution video"></a></div>
+              <div class="section-table__cell projects__info">
+                <h5>Air Pollution</h5>
+                <div class="meta-info">
+                  <div class="meta-info__date">
+                    <time datetime="2017-03-22">Created 1 day ago</time>
+                  </div>
+                  <div class="meta-info__shared">
+                    <time datetime="2017-03-22">Shared 13 hours ago</time>
+                  </div>
+                </div>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.</p>
+              </div>
+              <div class="section-table__cell remove">
+                <button class="remove__button"></button>
+              </div>
+            </div>
+            <div class="section-table__row">
+              <div class="section-table__cell projects__preview_slides"><a href="#">
+                  <div class="projects__img-info"><i class="icon ion-ios-browsers"></i>
+                    <p>9 slides</p>
+                  </div><img src="images/exploring-swivl-slide.jpg" alt="Photo: Exploring Swivl slide"></a></div>
+              <div class="section-table__cell projects__preview_video"><a href="#">
+                  <div class="projects__img-info"><i class="icon ion-ios-videocam"></i>
+                    <p>01:34:12</p>
+                  </div><img src="images/exploring-swivl-video.jpg" alt="Video: Exploring Swivl video"></a></div>
+              <div class="section-table__cell projects__info">
+                <h5>Exploring Swivl</h5>
+                <div class="meta-info">
+                  <div class="meta-info__date">
+                    <time datetime="2017-03-22">Created 1 day ago</time>
+                  </div>
+                  <div class="meta-info__shared">
+                    <time datetime="2017-03-22">Shared 13 hours ago</time>
+                  </div>
+                </div>
+                <p>This video was produced with a Swivl!</p>
+              </div>
+              <div class="section-table__cell remove">
+                <button class="remove__button"></button>
+              </div>
+            </div>
+            <div class="section-table__row">
+              <div class="section-table__cell projects__preview_slides"><a href="#"><img src="images/no-slides.jpg" alt="Photo: Exploring Swivl slide"></a></div>
+              <div class="section-table__cell projects__preview_video"><a href="#">
+                  <div class="projects__img-info"><i class="icon ion-ios-videocam"></i>
+                    <p>01:34:12</p>
+                  </div><img src="images/exploring-swivl-video2.jpg" alt="Video: Exploring Swivl video"></a></div>
+              <div class="section-table__cell projects__info">
+                <h5>Exploring Swivl</h5>
+                <div class="meta-info">
+                  <div class="meta-info__date">
+                    <time datetime="2017-03-22">Created 1 day ago</time>
+                  </div>
+                  <div class="meta-info__shared">
+                    <time datetime="2017-03-22">Shared 13 hours ago</time>
+                  </div>
+                </div>
+                <p>This video was produced with a Swivl!</p>
+              </div>
+              <div class="section-table__cell remove"> 
+                <button class="remove__button"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Projects section end-->
+        <!-- Pagination block begin-->
+        <div class="container pagination">
+          <ul>
+            <li><a href="#">
+                 <i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+            <li class="current"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a class="disabled" href="#">...</a></li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">
+                 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <!-- Pagination block end-->
+        <!-- Delete modal window begin-->
+        <div class="delete">
+          <header class="delete__header">
+            <p class="delete__header_text">Delete User</p>
+            <button class="delete__close-button close"></button>
+          </header>
+          <p class="delete__content">Delete user Delete user Delete user Delete users Delete userDelete userDelete userDelete user</p>
+          <div class="delete__buttons">
+            <button class="delete__buttons_cancel close">Cancel</button>
+            <button class="delete__buttons_remove">Remove</button>
+          </div>
+        </div>
+        <!-- Delete modal window end-->
+      </main>
+      <!-- Main content part end-->
+      <!-- Footer block begin-->
+      <footer>
+        <div class="footer__wrap footer container">
+          <div class="footer__logo"><img src="images/logo-footer.svg" title="Swivl's logo" alt="Swivl's logo"></div>
+          <div class="footer__company-info">
+            <p> <span class="copyrights">2013-2014 Swivl </span><br>
+              All rights reserved.<br>
+              1354 El Camino Real<br>
+              San Carlos, CA 94070<br>
+              1-88-837-6209
+            </p>
+          </div>
+          <div class="footer__right">
+            <div class="socials">
+              <ul class="socials__list">
+                <li class="socials__item"><a class="socials__link socials__link_facebook" href="https://www.facebook.com/"><i class="icon ion-social-facebook"></i></a></li>
+                <li class="socials__item"><a class="socials__link socials__link_twitter" href="https://twitter.com"><i class="icon ion-social-twitter"></i></a></li>
+                <li class="socials__item"><a class="socials__link socials__link_googleplus" href="https://plus.google.com/"><i class="icon ion-social-googleplus"></i></a></li>
+              </ul>
+            </div>
+            <!-- Footer navigation block begin-->
+            <div class="footer__nav">
+              <nav class="footer-menu">
+                <ul class="footer-menu__list">
+                  <li class="footer-menu__item"><a class="footer-menu__link" href="#">Capture app</a></li>
+                  <li class="footer-menu__item"><a class="footer-menu__link" href="#">About Swivl</a></li>
+                  <li class="footer-menu__item"><a class="footer-menu__link" href="#">Terms and conditions</a></li>
+                  <li class="footer-menu__item"><a class="footer-menu__link" href="#">Privacy policy</a></li>
+                </ul>
+              </nav>
+            </div>
+            <!-- Footer navigation block end-->
+          </div>
+        </div>
+      </footer>
+      <!-- Footer block end-->
+    </div>
+    <!-- jQuery (necessary for some JavaScript plugins)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- General options -->
+    <script src="js/common.js"></script>
+  </body>
+</html>

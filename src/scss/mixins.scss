@@ -1,0 +1,34 @@
+// Mixins
+
+@mixin text($color, $font_family, $font_size, $font-weight) {
+  color: $color;
+  font-family: $font_family;
+  font-size: $font_size;
+  font-weight: $font-weight;
+}
+
+
+@mixin desktop() {
+  @media (max-width: 1199px) {
+    @content
+  }
+}
+
+
+@mixin laptop() {
+  @media (max-width: 990px) {
+    @content
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: 767px) {
+    @content
+  }
+}
+
+@mixin phone() {
+  @media (max-width: 480px) {
+    @content
+  }
+}

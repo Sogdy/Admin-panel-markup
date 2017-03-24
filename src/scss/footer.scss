@@ -1,0 +1,104 @@
+@import "variables";
+@import "mixins";
+
+// Footer styles begin
+footer {
+  width: 100%;
+  background: #fff;
+}
+.footer {
+  background: #fff;
+  width: 1280px;
+  padding: 2px 56px 12px;
+  position: relative;
+  @media (max-width: 1280px) {
+    width: 100%;
+  }
+  @include tablet() {
+    text-align: center;
+  }
+}
+.footer__logo,
+.footer__company-info,
+.socials,
+.footer__nav {
+  display: inline-block;
+  vertical-align: top;
+  @include tablet() {
+    text-align: left;
+  }
+}
+.footer__logo {
+  padding-top: 9px;
+}
+.footer__company-info {
+  margin-top: 15px;
+  margin-left: 31px;
+  @include phone() {
+    margin-left: 16px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 17px;
+    .copyrights {
+      padding-left: 15px;
+      display: inline-block;
+      position: relative;
+      &:before {
+        content: "\f1f9";
+        font-family: "Font Awesome";
+        font-size: 13px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+.footer__right {
+  float: right;
+  margin-top: 6px;
+  @include tablet() {
+    float: none;
+    margin-top: 30px;
+  }
+}
+.footer__nav {
+  margin-left: 20px;
+}
+.footer-menu__item {
+  margin-bottom: 5px;
+}
+.footer-menu__link {
+  &:hover {
+    color: $primary-color;
+  }
+}
+.socials {
+  margin-top: 3px;
+}
+.socials__item {
+  background: $seventh-color;
+  border-radius: 50%;
+  border: 1px solid $seventh-color;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 7px;
+  transition: background, 0.4s;
+  &:hover {
+    background: #fff;
+    .socials__link {
+      color: $seventh-color;
+    }
+  }
+}
+.socials__link {
+  display: block;
+  padding-top: 3px;
+  text-align: center;
+  color: #fff;
+  .icon {
+    font-size: 15px;
+  }
+}
+// Footer styles end

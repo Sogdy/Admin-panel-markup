@@ -1,0 +1,98 @@
+// Invite members section styles begin
+.invite-members {
+  padding: 39px 31px 98px;
+  margin-bottom: 0;
+  p {
+    font-size: 15px;
+  }
+}
+.code-field {
+  margin-top: 25px;
+  margin-bottom: 34px;
+  p {
+    display: inline-block;
+    @include tablet() {
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+  &__text {
+    display: inline-block;
+    background: $forth-color;
+    border-radius: 5px;
+    padding: 11px 43px;
+    margin-left: 3px;
+    letter-spacing: 2px;
+    outline: 0;
+    border: none;
+    max-width: 160px;
+  }
+  button.code-field__reload {
+    margin-left: 20px;
+    padding: 16px;
+    outline: 0;
+    position: relative;
+    display: inline;
+    vertical-align: top;
+    &:before {
+      content: "\f201";
+      @include text (#fff, $secondary-font, 27px, 300);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+    }
+    &:hover:before {
+      color: $primary-color;
+    }
+  }
+}
+.spec-symbols {
+  color: $primary-color;
+  font-size: 19px;
+  word-spacing: 5px;
+  margin-left: 10px;
+}
+.email__invitation {
+  width: 100%;
+  border: 1px solid $seventh-color;
+  border-radius: 5px;
+  outline: 0;
+  padding: 12px 15px 8px;
+  margin-top: 18px;
+  font-size: 17px;
+  color: $seventh-color;
+  &:focus {
+    color: $third-color;
+    border-color: $seventh-color;
+  }
+  &.alert{
+    border-color: $secondary-color;
+    color: $secondary-color;
+    position: relative;
+  }
+}
+#invite-members {
+  position: relative;
+  .fa-exclamation-circle {
+    color: $secondary-color;
+    font-size: 23px;
+    position: absolute;
+    top: 27px;
+    right: 8px;
+    display: none;
+  }
+}
+    
+#invite-members__button {
+  position: absolute;
+  bottom: -69px;
+  right: 0px;
+  @include phone() {
+    padding-right: 17px;
+    bottom: -50px;
+  }
+}
+// Invite members section styles end

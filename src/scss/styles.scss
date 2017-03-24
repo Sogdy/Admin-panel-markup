@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "grid";
+@import "header";
+@import "table";
+@import "group";
+@import "invite-members";
+@import "members";
+@import "projects";
+@import "pagination";
+@import "footer";
+
+@font-face {
+  font-family: 'Font Awesome';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/fontawesome-webfont.woff) format('woff');
+  unicode-range: U+0-10FFFF;
+}
+
+// General styles begin
+body {
+  @include text ($third-color, $primary-font, 14px, 300);
+  background-color: $sixth-color;
+  font-weight: normal;
+  line-height: 21px; 
+}
+.body__wrapper {
+  overflow: hidden;
+}
+.content {
+  margin-bottom: 142px;
+  zoom: 1;
+  display: block;
+  position: relative;
+}
+p,
+label {
+  @include text ($third-color, $primary-font, 17px, 400);
+}
+a {
+  text-decoration: none;
+  outline: 0;
+  color: inherit;
+  transition: all, 0.3s;
+}
+button{ 
+  outline: 0;
+  cursor: pointer;
+}
+img {
+  @include laptop() {
+    max-width: 100%;
+  }
+}
+h2,
+h3,
+h4,
+h5 {
+  @include text ($third-color, $primary-font, 20px, 400);
+}
+h2 {
+  font-size: 23px;
+  margin-top: 32px;
+  text-align: center;
+}
+h3.section-title {
+  font-size: 23px;
+}
+h5 {
+  font-size: 17px;
+  @include tablet()   {
+    font-weight: 700;
+  }
+}
+.button {
+  background: $primary-color;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 11px 60px;
+  border: 2px solid $primary-color;
+  line-height: 1;
+  transition: background, color, 0.5s;
+  @include phone() {
+    padding: 11px 17px;
+    font-size: 15px;
+  }
+  &:hover {
+    background: #fff;
+    color: $primary-color;
+  }
+}
+.meta-info {
+  margin-top: 7px;
+}
+.meta-info__users,
+.meta-info__projects,
+.meta-info__date,
+.meta-info__shared {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  margin: 11px 20px 0 0;
+  &:before {
+    @include text ($seventh-color, $secondary-font, 16px, 300);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+  }
+  p,
+  time {
+    font-size: 14px;
+    color: $seventh-color;
+  }
+}
+.meta-info__users:before {
+  content: "\f213";
+}
+.meta-info__projects:before {
+  content: "\f229";
+  font-size: 18px;
+}
+.meta-info__date {
+  padding-left: 25px;
+  &:before {
+    content: "\f073";
+    font-family: "Font Awesome";
+  }
+  time {
+    font-size: 15px;
+  }
+}
+.meta-info__shared:before {
+  content: "\f47c";
+}
+
+h2+.meta-info {
+  display: table;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+// General styles end
+
+// Modal window styles begin
+.delete {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 315px;
+  border-radius: 5px;
+  background: #fff;
+  z-index: 20;
+  @include phone() {
+    width: 300px;
+  }
+  &__header {
+    background: $secondary-color;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    &_text {
+      padding-top: 18px;
+      padding-bottom: 13px;
+      color: #fff;
+      font-size: 15px;
+    }
+  }
+  &__close-button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    width: 20px;
+    height: 20px;
+    content: "";
+    top: 9px;
+    right: 12px;
+    &:before,
+    &:after {
+      content: "";
+      width: 14px;
+      height: 2px;
+      background: #fff;
+      top: 50%;
+      right: 0;
+      position: absolute;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  &__content {
+    padding: 42px;
+    display: inline-block;
+    text-align: center;
+    font-size: 17px;
+  }
+  .delete__buttons {
+    position: absolute;
+    bottom: 39px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    &_cancel,
+    &_remove {
+      color: #fff;
+      border: 1px solid $third-color;
+      padding: 12px 44px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      line-height: 1;
+      transition: background, color, 0.4s;
+      @include phone() {
+        padding-right: 32px;
+        padding-left: 32px;
+      }
+    }
+    &_cancel {
+      background: $third-color;
+      &:hover {
+        background: #fff;
+        color: $third-color;
+      }
+    }
+    &_remove {
+      background: $secondary-color;
+      border-color: $secondary-color;
+      margin-left: 20px;
+      &:hover {
+        background: #fff;
+        color: $secondary-color;
+      }
+      @include phone() {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.modal {
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    z-index: 1;
+    position: absolute;
+  }
+  .delete {
+    display: block;
+  }
+}
+// Modal window styles end
+
+
+  

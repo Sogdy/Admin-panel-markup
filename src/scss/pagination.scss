@@ -1,0 +1,58 @@
+// Pagination styles begin
+.pagination {
+  background: #fff;
+  padding-top: 15px;
+  padding-bottom: 55px;
+  border: 1px solid $forth-color;
+  border-top: none;
+  ul {
+    border: 1px solid $seventh-color;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: table;
+    overflow: hidden;
+    li {
+      display: inline-block;
+      float: left;
+      a {
+        color: $seventh-color;
+        padding: 5px 10px;
+        display: inline-block;
+        min-width: 9px;
+        &.disabled {
+          pointer-events: none;
+          cursor: default;
+        }
+        .fa {
+          font-size: 12px;
+        }
+      }
+      & + li {
+        border-left: 1px solid $seventh-color;
+      }
+      &:first-child a,
+      &:last-child a {
+        padding: 5px 39px;
+        @include phone() {
+          padding-left: 11px;
+          padding-right: 11px;
+        }
+      }
+      &.current {
+        background: $primary-color;
+        a {
+          color: #fff;
+        }
+        &:hover a{
+          color: #fff;
+        }
+      }
+      &:hover {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+// Pagination styles end

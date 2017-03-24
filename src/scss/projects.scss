@@ -1,0 +1,146 @@
+
+// Projects section styles begin
+.projects {
+  padding: 36px 31px 32px;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+#projects_add-video {
+  position: absolute;
+  top: 27px;
+  right: 29px;
+  padding: 9px 33px;
+  @include phone() {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+#projects {
+  .projects__preview_slides {
+    width: 19%;
+    padding-right: 0;
+  }
+  .projects__preview_video {
+    width: 25.9%;
+    border-left: none;
+  }
+  .projects__info {
+    width: 47.5%;
+    vertical-align: top;
+    @include laptop() {
+      width: 28.5%;
+    }
+    @include tablet() {
+      margin-bottom: 20px;
+    }
+  }
+  .remove {
+    width: 4.6%;
+    @include tablet() {
+      position: absolute;
+      bottom: 27px;
+      right: 0;
+    }
+    @include phone() {
+      bottom: 16px;
+    }
+  }
+  .section-table__cell {
+    padding-bottom: 9px;
+  }
+  .projects__preview_slides,
+  .projects__preview_video,
+  .projects__info,
+  .remove {
+    @include tablet() {
+      width: auto;
+    }
+  }
+  .meta-info {
+    margin-top: 6px;
+    margin-bottom: 2px;
+    &__date, 
+    &__shared {
+      display: block;
+      margin-top: 0;
+      padding-left: 20px;
+      time {
+        font-size: 13px;
+      }
+    }
+  }
+  .meta-info_shared time:before {
+    font-size: 20px;
+  }
+  .section-table__cell p {
+    font-size: 13px;
+    line-height: 17px;
+  } 
+  .section-table__headings .section-table__cell {
+    padding-bottom: 20px;
+    p {
+      font-size: 17px;
+    }
+  } 
+  .remove__button:before {
+    top: 11px;
+    transform: translateX(-50%);
+  }
+  .projects__preview_slides,
+  .projects__preview_video {
+    position: relative;
+    @include tablet() {
+      display: inline-block;
+    }
+      @include phone() {
+      width: 100%;
+      a,
+      img {
+        width: 100%;
+      }
+    }
+    a {
+      position: relative;
+      display: inline-block;
+    }
+    .projects__img-info {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      height: 95%;
+      transition: opacity, 0.5s;
+      @include phone() {
+        height: 97%;
+      }
+      p,
+      .icon {
+        color: #fff;
+        vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+      }
+      i.icon {
+        padding-bottom: 26px;
+        font-size: 41px;
+      }
+      p {
+        font-size: 15px;
+        padding-top: 56px;
+      }
+    }
+    :hover .projects__img-info {
+      opacity: 0;
+    }
+  }
+  .projects__preview_slides .projects__img-info {
+    right: 0;
+  }
+}
+// Projects section styles end

@@ -1,0 +1,90 @@
+
+// Table styles begin
+.section-table {
+  display: table;
+  border: 11px solid $forth-color;
+  width: 100%;
+  margin-top: 28px;
+  border-radius: 5px;
+  @include tablet() {
+    border: none;
+  }
+  .section-table__row{
+    display: table-row;
+    position: relative;
+    @include tablet() {
+      display: block;
+      width: 100%;
+      padding: 20px 0;
+    }
+    &+.section-table__row {
+      @include tablet() {
+        border-bottom: 1px solid $forth-color;
+        &:last-child {
+          border: none;
+        }
+      }
+      .section-table__cell {        
+        border-top: 1px solid $forth-color;
+        @include tablet() {
+          border: none;
+        }
+        &+.section-table__cell {
+          border-left: 1px solid $forth-color;
+          @include tablet() {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  .section-table__cell {
+    display: table-cell;
+    padding: 14px 15px 15px;
+    @include laptop() {
+      vertical-align: middle;
+    }
+    @include tablet() {
+      display: block;
+      padding: 5px 0;
+    }
+    p {
+      font-size: 15px;
+    }
+  
+  }
+  
+  .section-table__headings{
+    background: $forth-color;
+    @include tablet() {
+      display: none;
+    }
+    .section-table__cell {
+      padding: 12px 17px 17px;
+      p {
+        color: $seventh-color;
+        font-size: 17px;
+      }
+    }
+  }
+  .remove {
+    position: relative;
+    &__button {
+      background: transparent;
+      border: none;
+      &:before {
+        content: "\f36e";
+        @include text ($secondary-color, $secondary-font, 27px, 300);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: color, 0.5s;
+      }
+      &:hover:before {
+        color: #000;
+      }
+    }
+  }
+}
+// Table styles end

@@ -1,0 +1,123 @@
+@import "variables";
+@import "mixins";
+
+
+// Header block begin
+header {
+  width: 100%;
+  background: $fifth-color;
+}
+.header{
+  width: 1280px;
+  background: $fifth-color;
+  padding: 13px 30px 0;
+  font-size: 0;
+  position: relative;
+  @media (max-width: 1280px) {
+    width: 100%;
+  }
+  &__logo,
+  &__nav,
+  &__min-profile {
+    display: inline-table;
+    vertical-align: middle;
+    @include tablet() {
+      display: block;
+      text-align: center;
+    }
+  }
+  &__logo {
+    width: 35%;
+    @include tablet() {
+      width: 100%;
+    }
+  }
+  &__nav {
+    width: 50%;
+    @include tablet() {
+      width: 100%;
+      margin: 16px 0;
+    }
+  }
+}
+.header_logo img {
+  max-width: 100%;
+}
+.main-menu {
+  @include laptop() {
+    margin-left: 20px;
+  }
+  @include tablet() {
+    text-align: center;
+    margin-left: 0;
+  }
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 43px;
+    @include desktop() {
+      padding-left: 31px;
+      padding-right: 31px;
+    }
+    @include laptop() {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    @include phone() {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  li+li {
+    margin-left: 44px;
+    @include laptop() {
+      margin-left: 0;
+    }
+  }
+}
+.header__min-profile {
+  width: 15%;
+  text-align: right;
+  @include tablet() {
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  &_name {
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+    padding: 0 16px;
+    &:before,
+    &:after {
+      @include text (#fff, $secondary-font, 17px, 400);
+      position: absolute;
+    }
+    &:before {
+      content: '\f213';
+      color: #000;
+      top: -1px;
+      left: -9px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background: #fff;
+    }
+    &:after {
+      content: '\f3d0';
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 10px;
+    }
+  } 
+}
+
+// Header block end

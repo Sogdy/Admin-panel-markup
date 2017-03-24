@@ -1,0 +1,224 @@
+extends ../layout
+
+block content
+
+    // Main content part begin
+    main.content
+        h2 About Swivl
+        .meta-info
+            .meta-info__users
+                p 15 users
+            .meta-info__projects
+                p 4 projects
+
+        // About Swivl section begin
+        section(class="group container section")
+            h3.section-title About Swivl
+            button(class="button" id="group_edit") Edit
+            .meta-info
+                .meta-info__date
+                    time(datetime="2017-03-22") Created 1 day ago
+            p This group is created for sharing introductory tutorials about Swivl
+            label(for="members_approval" id="label") New members require approval:
+            input(type="checkbox" name="members_approval" id="members_approval" checked)
+        // About Swivl section end
+
+
+        // Invite members section begin
+        section(class="invite-members container section")
+            h3.section-title Invite group members
+            .code-field
+                p Email join code to existing Swivl Service users: 
+                input(type="text" name="code-field_text" class="code-field__text" value="BDd4DV") 
+                button(class="button code-field__reload")
+            p Or have us send the invitations, enter email separated by one of the symbols  
+                span.spec-symbols   ; , spacebar 
+                | or start with a new line
+            form#invite-members
+                input(type="text" name="email_invitation" id="email_invitation"  class="email__invitation" onfocus="if(this.value=='example@gmail.com') { this.value=''; }" onblur="if(this.value=='') { this.value='example@gmail.com'; }" value="example@gmail.com")
+                i(class="fa fa-exclamation-circle" aria-hidden="true")
+                button(class="button" form="invite-members" type="button" id="invite-members__button") Send
+
+        // Invite members section end
+
+        // Members section begin
+        section(class="members container section")
+            h3.section-title Members
+            div(class="section-table" id="members")
+                div(class="section-table__row section-table__headings")
+                    div(class="section-table__cell members__name")
+                        p User Name
+                    div(class="section-table__cell members__email")
+                        p Email
+                    div(class="section-table__cell members__stats")
+                        p Video Stats
+                    div(class="section-table__cell members__status")
+                        p Status
+                    div(class="section-table__cell remove")
+
+                div(class="section-table__row")
+                    div(class="section-table__cell members__name")
+                        p Jonathan Romero
+                    div(class="section-table__cell members__email")
+                        p jonathan.romero19@example.com
+                    div(class="section-table__cell members__stats")
+                        a(href="#") See Details
+                    div(class="section-table__cell members__status")
+                        button(class="members__approve") Approve
+                    div(class="section-table__cell remove")
+                        button(class="remove__button") 
+                
+                div(class="section-table__row")
+                    div(class="section-table__cell members__name")
+                        p Joanne Hall
+                    div(class="section-table__cell members__email")
+                        p joanne.hall48@example.com
+                    div(class="section-table__cell members__stats")
+                        a(href="#") See Details
+                    div(class="section-table__cell members__status")
+                        button(class="members__approve") Approve
+                    div(class="section-table__cell remove")
+                        button(class="remove__button") 
+
+                div(class="section-table__row")
+                    div(class="section-table__cell members__name")
+                        p Brad Freeman
+                    div(class="section-table__cell members__email")
+                        p brad.freeman95@example.com
+                    div(class="section-table__cell members__stats")
+                        a(href="#") See Details
+                    div(class="section-table__cell members__status")
+                        button(class="members__approve approved" disabled) Approved
+                    div(class="section-table__cell remove")
+                        button(class="remove__button") 
+        // Members section end
+        
+        // Projects section begin
+        section(class="projects container section")
+            h3.section-title Projects
+            button(class="button" id="projects_add-video") Add Video
+
+            div(class="section-table" id="projects")
+                div(class="section-table__row section-table__headings")
+                    div(class="section-table__cell projects__preview_slides")
+                        p Preview
+                    div(class="section-table__cell projects__preview_video")
+                    div(class="section-table__cell projects__info")
+                        p Project Info
+                    div(class="section-table__cell remove")
+
+                div(class="section-table__row")
+                    div(class="section-table__cell projects__preview_slides")
+                        a(href="#")
+                            img(src="images/no-slides.jpg" alt="Photo: Air Pollution slide")
+                    div(class="section-table__cell projects__preview_video")
+                        a(href="#")
+                            .projects__img-info
+                                <i class="icon ion-ios-videocam"></i>
+                                p 00:34
+                            img(src="images/air-pollution-video.jpg" alt="Video: Air Pollution video")
+                    div(class="section-table__cell projects__info")
+                        h5 Air Pollution
+                        .meta-info
+                            .meta-info__date
+                                time(datetime="2017-03-22") Created 1 day ago
+                            .meta-info__shared
+                                time(datetime="2017-03-22") Shared 13 hours ago
+                        p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.
+                    div(class="section-table__cell remove")
+                        button(class="remove__button")
+
+                div(class="section-table__row")
+                    div(class="section-table__cell projects__preview_slides")
+                        a(href="#")
+                            .projects__img-info
+                                <i class="icon ion-ios-browsers"></i>
+                                p 9 slides
+                            img(src="images/exploring-swivl-slide.jpg" alt="Photo: Exploring Swivl slide")
+                    div(class="section-table__cell projects__preview_video")
+                        a(href="#")
+                            .projects__img-info
+                                <i class="icon ion-ios-videocam"></i>
+                                p 01:34:12
+                            img(src="images/exploring-swivl-video.jpg" alt="Video: Exploring Swivl video")
+                    div(class="section-table__cell projects__info")
+                        h5 Exploring Swivl
+                        .meta-info
+                            .meta-info__date
+                                time(datetime="2017-03-22") Created 1 day ago
+                            .meta-info__shared
+                                time(datetime="2017-03-22") Shared 13 hours ago
+                        p This video was produced with a Swivl!
+                    div(class="section-table__cell remove")
+                        button(class="remove__button")
+
+                div(class="section-table__row")
+                    div(class="section-table__cell projects__preview_slides")
+                        a(href="#")
+                            img(src="images/no-slides.jpg" alt="Photo: Exploring Swivl slide")
+                    div(class="section-table__cell projects__preview_video")
+                        a(href="#")
+                            .projects__img-info
+                                <i class="icon ion-ios-videocam"></i>
+                                p 01:34:12
+                            img(src="images/exploring-swivl-video2.jpg" alt="Video: Exploring Swivl video")
+                    div(class="section-table__cell projects__info")
+                        h5 Exploring Swivl
+                        .meta-info
+                            .meta-info__date
+                                time(datetime="2017-03-22") Created 1 day ago
+                            .meta-info__shared
+                                time(datetime="2017-03-22") Shared 13 hours ago
+                        p This video was produced with a Swivl!
+                    div(class="section-table__cell remove")  
+                        button(class="remove__button")
+        // Projects section end
+
+        // Pagination block begin
+        div(class="container pagination")
+            ul
+                li
+                    a(href="#") 
+                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                li.current
+                    a(href="#") 1
+                li
+                    a(href="#") 2
+                li
+                    a(href="#") 3
+                li
+                    a(href="#") 4
+                li
+                    a(href="#") 5
+                li
+                    a(href="#") 6
+                li
+                    a(href="#" class="disabled") ...
+                li
+                    a(href="#") 15
+                li
+                    a(href="#") 
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        // Pagination block end
+
+        // Delete modal window begin
+        .delete
+            header.delete__header
+                p.delete__header_text Delete User
+                button(class="delete__close-button close")
+            p.delete__content Delete user Delete user Delete user Delete users Delete userDelete userDelete userDelete user
+            .delete__buttons
+                button(class="delete__buttons_cancel close") Cancel
+                button(class="delete__buttons_remove") Remove
+        // Delete modal window end
+    // Main content part end
+
+    
+
+block jsIncludes
+    // jQuery (necessary for some JavaScript plugins)
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+
+
+    // General options 
+    script(src="js/common.js")

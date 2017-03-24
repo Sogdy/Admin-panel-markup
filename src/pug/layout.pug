@@ -1,0 +1,54 @@
+include templates/mixins
+doctype
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        block title
+            title Swivl Cloud
+        meta(name="description" content="Lifting achievement by expanding the focus of observations to students.")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+
+        // CSS
+
+        link(rel="stylesheet" href="css/ionicons.min.css")
+        link(rel="stylesheet" href="css/font-awesome.min.css")
+
+        // Site Styles
+        link(rel="stylesheet" href="css/styles.css")
+
+    body
+        .body__wrapper
+            header
+                // Header block begin
+                .header__wrap(class='header container')
+                    h1.header__logo
+                        img(src="images/logo-header.svg" title="Swivl's logo" alt="Swivl's logo")
+                    
+                    include templates/nav
+
+                    .header__min-profile
+                        a(href="#" class="header__min-profile_name") allej7
+                // Header block end
+           
+            
+            block content
+
+            // Footer block begin
+            footer
+                .footer__wrap(class="footer container")
+                    .footer__logo
+                        img(src="images/logo-footer.svg" title="Swivl's logo" alt="Swivl's logo")
+                    .footer__company-info
+                        p  
+                            span.copyrights 2013-2014 Swivl 
+                            <br>
+                            | All rights reserved.<br>
+                            | 1354 El Camino Real<br>
+                            | San Carlos, CA 94070<br>
+                            | 1-88-837-6209
+                    .footer__right
+                        include templates/socials
+                        include templates/footer-menu
+            // Footer block end
+
+        block jsIncludes
